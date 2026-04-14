@@ -90,9 +90,12 @@ body {
 
 .space-orbits {
   position: fixed;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: 55vh;
+  height: 45vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   pointer-events: none;
   z-index: 0;
