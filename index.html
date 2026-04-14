@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Green Nebula Tab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars layer layer-back"></div>
+  <div class="stars layer layer-mid"></div>
+  <div class="stars layer layer-front"></div>
+
+  <main class="shell">
+    <header class="top-bar glass">
+      <div class="greeting">
+        <span class="label">welcome back, explorer</span>
+        <h1>Green Nebula</h1>
+      </div>
+      <div class="clock">
+        <span id="time"></span>
+        <span id="date"></span>
+      </div>
+    </header>
+
+    <section class="search-panel glass">
+      <form action="https://www.google.com/search" method="GET">
+        <input
+          type="text"
+          name="q"
+          class="search-input"
+          placeholder="Search the cosmos..."
+          autocomplete="off"
+        />
+      </form>
+      <div class="chips">
+        <button data-url="https://mail.google.com">Mail</button>
+        <button data-url="https://github.com">GitHub</button>
+        <button data-url="https://www.youtube.com">YouTube</button>
+        <button data-url="https://chat.perplexity.ai">AI</button>
+      </div>
+    </section>
+
+    <section class="widgets">
+      <article class="widget glass">
+        <h2>Launchpad</h2>
+        <div class="links">
+          <a href="https://developer.mozilla.org">MDN</a>
+          <a href="https://stackoverflow.com">StackOverflow</a>
+          <a href="https://codesandbox.io">CodeSandbox</a>
+          <a href="https://inbox.google.com">Inbox</a>
+        </div>
+      </article>
+
+      <article class="widget glass">
+        <h2>Green log</h2>
+        <textarea
+          id="notes"
+          placeholder="Write today’s mission, ideas, or puzzles..."
+        ></textarea>
+      </article>
+
+      <article class="widget glass">
+        <h2>Vitals</h2>
+        <ul class="stats">
+          <li><span>Focus mode</span><span class="pill pill-green">ONLINE</span></li>
+          <li><span>Oxygen</span><span>98%</span></li>
+          <li><span>Green index</span><span>∞</span></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll(".chips button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const url = btn.getAttribute("data-url");
+        window.open(url, "_blank");
+      });
+    });
+
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+      const date = now.toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" });
+      document.getElementById("time").textContent = time;
+      document.getElementById("date").textContent = date;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    const notes = document.getElementById("notes");
+    const KEY = "green-nebula-notes";
+    notes.value = localStorage.getItem(KEY) || "";
+    notes.addEventListener("input", () => {
+      localStorage.setItem(KEY, notes.value);
+    });
+  </script>
+</body>
+</html>
