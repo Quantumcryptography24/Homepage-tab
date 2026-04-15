@@ -92,7 +92,7 @@ body {
   position: fixed;
   left: 0;
   right: 0;
-  top: 40vh;
+  top: 55vh;
   height: 45vh;
   display: flex;
   align-items: flex-start;
@@ -102,8 +102,12 @@ body {
 }
 
 .sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: 34px;
   height: 34px;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #ffffff, #ffe082, #ffb300);
   box-shadow:
@@ -113,8 +117,11 @@ body {
 
 .orbit {
   position: absolute;
+  top: 50%;
+  left: 50%;
   border-radius: 50%;
   border: 1px solid rgba(160, 255, 200, 0.09);
+  transform: translate(-50%, -50%);
   animation: orbit-spin linear infinite;
   transform-origin: center center;
 }
@@ -138,6 +145,13 @@ body {
 }
 
 .planet {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.9);
+}.planet {
   position: absolute;
   top: 50%;
   left: 100%;
