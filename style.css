@@ -26,19 +26,11 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman",
-    serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", serif;
   color: var(--text-main);
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman",
-    serif;
-  color: var(--text-main);
   background:
     radial-gradient(circle at 10% 10%, rgba(12, 96, 64, 0.9), transparent 55%),
     radial-gradient(circle at 80% 5%, rgba(19, 178, 90, 0.8), transparent 55%),
@@ -57,35 +49,37 @@ body {
   bottom: 0;
   pointer-events: none;
   background-repeat: repeat;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .layer-back {
   background-image:
-    radial-gradient(1px 1px at 10px 20px, #baffff 0, transparent 50%),
-    radial-gradient(1px 1px at 130px 80px, #e2fff3 0, transparent 50%),
-    radial-gradient(1px 1px at 70px 150px, #ffffff 0, transparent 50%);
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.5px);
+  background-size: 90px 90px, 140px 140px;
+  background-position: 0 0, 40px 30px;
   animation: driftBack 120s linear infinite;
-  filter: blur(1px);
-  opacity: 0.45;
+  opacity: 0.35;
 }
 
 .layer-mid {
   background-image:
-    radial-gradient(1px 1px at 20px 40px, #a8ffe3 0, transparent 50%),
-    radial-gradient(1px 1px at 160px 120px, #e5ffe6 0, transparent 50%),
-    radial-gradient(1px 1px at 90px 190px, #ffffff 0, transparent 50%);
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.85) 0 1px, transparent 1.5px);
+  background-size: 70px 70px, 110px 110px;
+  background-position: 20px 10px, 55px 35px;
   animation: driftMid 80s linear infinite;
-  opacity: 0.65;
+  opacity: 0.55;
 }
 
 .layer-front {
   background-image:
-    radial-gradient(1px 1px at 25px 25px, #ffffff 0, transparent 55%),
-    radial-gradient(1px 1px at 140px 60px, #dffff8 0, transparent 55%),
-    radial-gradient(1px 1px at 60px 170px, #ffffff 0, transparent 55%);
+    radial-gradient(circle, rgba(255, 255, 255, 1) 0 1.2px, transparent 1.6px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 1px, transparent 1.5px);
+  background-size: 50px 50px, 85px 85px;
+  background-position: 10px 15px, 35px 40px;
   animation: driftFront 55s linear infinite;
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .space-orbits {
@@ -151,13 +145,6 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.9);
-}.planet {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.9);
 }
 
 .planet-1 {
@@ -180,10 +167,10 @@ body {
 
 @keyframes orbit-spin {
   from {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
@@ -275,8 +262,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman",
-    serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", serif;
 }
 
 .clock #time {
@@ -311,8 +297,7 @@ body {
   box-shadow: var(--shadow-small);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease,
-    background 220ms ease;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease, background 220ms ease;
 }
 
 .search-input::placeholder {
@@ -349,8 +334,7 @@ body {
   gap: 8px;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease,
-    background 180ms ease;
+  transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease, background 180ms ease;
 }
 
 .chips button::before {
@@ -411,8 +395,7 @@ body {
   background: rgba(1, 10, 7, 0.8);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  transition: background 150ms ease, transform 150ms ease, box-shadow 150ms ease,
-    border-color 150ms ease;
+  transition: background 150ms ease, transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
 }
 
 .links a:hover {
@@ -430,8 +413,7 @@ body {
   border: 1px solid rgba(196, 255, 219, 0.4);
   padding: 10px 11px;
   font-size: 13px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman",
-    serif;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", serif;
   background: rgba(1, 9, 5, 0.9);
   color: var(--text-main);
   outline: none;
